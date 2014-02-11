@@ -1,0 +1,16 @@
+title: Test Page
+
+## R Code
+```{r}
+pi
+```
+
+## Cool smoothed scatter plots
+```{r, fig.width=8, fig.height=8, fig.cap=""}
+n <- 10000
+x1  <- matrix(rnorm(n), ncol = 2)
+x2  <- matrix(rnorm(n, mean = 3, sd = 1.5), ncol = 2)
+x   <- rbind(x1, x2)
+
+smoothScatter(x)
+```
