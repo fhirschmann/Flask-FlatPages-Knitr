@@ -1,11 +1,49 @@
-title: Test Page
+title:  Test Page
+desc:   An example page rendered using Flask-FlatPages-Knitr.
 
-## R Code
+This page was rendered using
+[Flask-FlatPages-Knitr](http://github.com/fhirschmann/Flask-FlatPages-Knitr).
+For more advanced markdown features you might also be interested in
+[Flask-FlatPages-Pandoc](http://github.com/fhirschmann/Flask-FlatPages-Pandoc).
+
+## Pie!
 ```{r}
 pi
 ```
 
-## Cool smoothed scatter plots
+## Tables using xtable
+
+```{r table, results="asis"}
+library(xtable)
+print(xtable(head(trees, 10)), type="html")
+```
+
+## Train a linear model
+```{r}
+fit <- lm(Volume ~ Girth, data=trees)
+fit
+```
+
+### Plot it
+```{r, fig.width=8, fig.height=8, fig.cap=""}
+par(mfrow = c(2, 2))
+plot(fit)
+```
+
+## Train a MARS model
+```{r}
+library(earth)
+fit2 <- earth(Volume ~ Girth, data=trees)
+fit2
+```
+
+### Plot it
+```{r, fig.width=8, fig.height=8, fig.cap=""}
+par(mfrow = c(2, 2))
+plot(fit2)
+```
+
+## Smoothed scatter plots
 ```{r, fig.width=8, fig.height=8, fig.cap=""}
 n <- 10000
 x1  <- matrix(rnorm(n), ncol = 2)
@@ -13,4 +51,14 @@ x2  <- matrix(rnorm(n, mean = 3, sd = 1.5), ncol = 2)
 x   <- rbind(x1, x2)
 
 smoothScatter(x)
+```
+
+### Heatmaps
+```{r, fig.width=8, fig.height=8, fig.cap=""}
+heatmap(as.matrix(scale(mtcars)), Colv=F, scale="none")
+```
+
+### R needs more love!
+```{r, fig.cap=""}
+plot(seq(-2,2,0.001), (function(x) (sqrt(cos(x))*cos(200*x) + sqrt(abs(x))-0.7)*(4-x*x)^0.01)(seq(-2,2,0.001)), type="l")
 ```

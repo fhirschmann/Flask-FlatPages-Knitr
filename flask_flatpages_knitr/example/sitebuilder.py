@@ -13,7 +13,7 @@ FLATPAGES_EXTENSION = ".Rmd"
 app = Flask(__name__)
 app.config.from_object(__name__)
 pages = FlatPages(app)
-FlatPagesPandoc("markdown", app)
+FlatPagesPandoc("markdown", app, ["-s", "--mathjax"])
 FlatPagesKnitr(app)
 
 
