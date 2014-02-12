@@ -15,7 +15,6 @@ from os import makedirs, path
 
 from rpy2.robjects import r
 r.library("knitr")
-knitopt = r("opts_knit$set")
 
 try:
     __version__ = pkg_resources.require("Flask-FlatPages-Knitr")[0]
