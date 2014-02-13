@@ -12,6 +12,8 @@ are evaluated before the next step in the rendering process occurs.
 from __future__ import print_function
 import pkg_resources
 from os import makedirs, path
+from inspect import getargspec
+
 
 from rpy2.robjects import r
 r.library("knitr")
@@ -82,4 +84,8 @@ class FlatPagesKnitr(object):
 
         out = r.knit(text=text)
 
-        return self.postrenderer(out[0], flatpages, page)
+        # This is pretty ugly, but we want to support all types of rendering
+        # functions and Flask-FlatPages does this in a similar fashion.
+        n_args = len([a for a in getargspec(self.postrenderer).args if a is not "self"])
+
+        return self.postrenderer(*[out[0], flatpages, page][:n_args])
