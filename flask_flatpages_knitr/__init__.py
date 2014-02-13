@@ -53,10 +53,11 @@ class FlatPagesKnitr(object):
         """
         self.app = app
 
-        # The following lambda expression works around Flask-FlatPage's
-        # reflection magic.
         if not self.postrenderer:
             self.postrenderer = self.app.config["FLATPAGES_HTML_RENDERER"]
+
+        # The following lambda expression works around Flask-FlatPage's
+        # reflection magic.
         self.app.config["FLATPAGES_HTML_RENDERER"] = lambda t, p, m: self.renderer(t, p, m)
 
     def renderer(self, text, flatpages, page):
