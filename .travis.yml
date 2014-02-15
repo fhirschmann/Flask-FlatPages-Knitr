@@ -6,7 +6,7 @@ python:
   - 2.7
 before_install:
   - sudo apt-get install -qq r-base-core
-  - Rscript -e "options(repos=structure(c(CRAN='http://cran.r-mirror.de')));install.packages('knitr')"
+  - Rscript -e "options(repos=structure(c(CRAN='http://cran.r-mirror.de')));install.packages('knitr',lib='$R_LIBS_USER')"
 install:
   - pip install -r testapp/requirements.txt
   - pip install .
