@@ -36,7 +36,7 @@ Then you can simply add Flask-FlatPages-Knitr to your app:
 
 By default, ``FLATPAGES_HTML_RENDERER`` will be reused, which defaults
 to a Markdown implementation for Python. For more advanced Markdown
-rendering, `Flask-FlatPages-Pandoc <http://github.com/fhirschmann/Flask-FlatPages-Pandoc`_
+rendering, `Flask-FlatPages-Pandoc <http://github.com/fhirschmann/Flask-FlatPages-Pandoc>`_
 is recommended.
 
 Links
