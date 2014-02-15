@@ -1,0 +1,12 @@
+language: python
+python:
+  - 2.6
+  - 2.7
+before_install:
+  - sudo apt-get install -qq r-base-core
+before_install:
+  - Rscript -e "options(repos=structure(c(CRAN='http://cran.r-mirror.de')));install.packages('knitr')"
+install:
+  - pip install -r testapp/requirements.txt
+  - pip install .
+script: nosetests
