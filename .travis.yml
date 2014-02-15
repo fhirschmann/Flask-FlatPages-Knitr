@@ -1,4 +1,6 @@
 language: python
+env:
+  - R_LIBS_USER=$TRAVIS_BUILD_DIR/R
 python:
   - 2.6
   - 2.7
