@@ -30,7 +30,7 @@ setup(
     include_package_data=True,
     install_requires=[
         "Flask",
-        "Flask-FlatPages",
+        "Flask-FlatPages>=0.6",
         "rpy2"
     ],
     keywords="flask flatpages knitr markdown",
