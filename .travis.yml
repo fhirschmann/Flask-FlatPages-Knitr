@@ -7,5 +7,5 @@ before_install:
   - sudo Rscript -e "options(repos=structure(c(CRAN='http://cran.r-mirror.de')));install.packages('knitr')"
 install:
   - pip install -r testapp/requirements.txt
-  - pip install .
+  - python setup.py install
 script: nosetests
