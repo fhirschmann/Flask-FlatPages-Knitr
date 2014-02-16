@@ -1,8 +1,9 @@
+# -*- coding: utf-8 -*-
 import unittest
 import os
 from shutil import rmtree
 from tempfile import mkdtemp
-
+from codecs import open
 
 from flask import Flask
 from flask_flatpages import FlatPages
@@ -29,7 +30,7 @@ class TestFlatPagesKnitr(unittest.TestCase):
 
     def get(self, body, ext=".Rmd"):
         self.app.config.update(FLATPAGES_EXTENSION=ext)
-        with open(os.path.join(self.content, "test" + ext), "w") as f:
+        with open(os.path.join(self.content, "test" + ext), "w", "utf-8") as f:
             f.write("title:test\n\n" + body)
         return self.pages.get("test").html
 
@@ -43,3 +44,6 @@ class TestFlatPagesKnitr(unittest.TestCase):
         self.get("```{r test}\nplot(1:4, 1:4)\n```")
         self.assertTrue(os.path.exists(os.path.join(
             self.tmp, "static", "knitr", "test", "figure", "test.png")))
+
+    def test_unicode(self):
+        self.assertTrue(u"萬大事都有得解決" in self.get(u"```{r}\npaste('萬大事都有得解決')\n```"))
