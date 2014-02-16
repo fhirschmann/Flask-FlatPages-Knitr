@@ -20,6 +20,7 @@ class TestFlatPagesKnitr(unittest.TestCase):
         self.app.config.update(
             FLATPAGES_ROOT=self.content,
             FLATPAGES_AUTO_RELOAD=True,
+            FLATPAGES_ENCODING="utf-8",
             FLATPAGES_MARKDOWN_EXTENSIONS=["fenced_code"],
         )
         self.pages = FlatPages(self.app)
@@ -28,9 +29,9 @@ class TestFlatPagesKnitr(unittest.TestCase):
     def tearDown(self):
         rmtree(self.tmp)
 
-    def get(self, body, ext=".Rmd"):
+    def get(self, body, ext=".Rmd", enc="utf-8"):
         self.app.config.update(FLATPAGES_EXTENSION=ext)
-        with open(os.path.join(self.content, "test" + ext), "w", "utf-8") as f:
+        with open(os.path.join(self.content, "test" + ext), "w", enc) as f:
             f.write("title:test\n\n" + body)
         return self.pages.get("test").html
 
@@ -47,3 +48,7 @@ class TestFlatPagesKnitr(unittest.TestCase):
 
     def test_unicode(self):
         self.assertTrue(u"萬大事都有得解決" in self.get(u"```{r}\npaste('萬大事都有得解決')\n```"))
+
+    def test_unicode2(self):
+        self.app.config.update(FLATPAGES_ENCODING="iso-8859-15")
+        self.assertEqual(self.get(u"äöü", enc="iso-8859-15"), u"<p>äöü</p>")
