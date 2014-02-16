@@ -26,12 +26,6 @@ from random import choice
 print(choice([1, 2, 3, 4]))
 ```
 
-### Haskell
-```{r engine='haskell', engine.path='ghc'}
-let fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
-print $ take 10 fibs
-```
-
 ## Train a linear model
 ```{r}
 fit <- lm(Volume ~ Girth, data=trees)
