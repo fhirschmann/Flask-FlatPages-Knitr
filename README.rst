@@ -14,7 +14,7 @@ First, install the `knitr <http://yihui.name/knitr>`_ R package:
 
     Rscript -e "install.packages('knitr')"
 
-Right now, Flask-FlatPages-Knitr requires at least version 0.6 of Flat-Flatpages,
+Right now, Flask-FlatPages-Knitr requires at least version 0.6 of Flat-FlatPages,
 which has not been released yet. Hence, you'll have to install it from Github:
 
 .. code:: bash
@@ -27,7 +27,7 @@ Second, install Flask-FlatPages-Knitr from the Python Package Index:
 
     pip install Flask-FlatPages-Knitr
 
-Then you can simply add Flask-FlatPages-Knitr to your app:
+Finally, you can simply add Flask-FlatPages-Knitr to your app:
 
 .. code:: python
 
