@@ -5,7 +5,7 @@ from setuptools import setup
 setup(
     name="Flask-FlatPages-Knitr",
     version="0.2",
-    description="Knitr rendering for Flask-FlatPages",
+    description="Knitr preprocessing for Flask-FlatPages",
     long_description=open(path.join(path.dirname(__file__), "README.rst")).read(),
     url="http://github.com/fhirschmann/Flask-FlatPages-Knitr",
     author="Fabian Hirschmann",
