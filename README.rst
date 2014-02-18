@@ -14,6 +14,13 @@ First, install the `knitr <http://yihui.name/knitr>`_ R package:
 
     Rscript -e "install.packages('knitr')"
 
+Right now, Flask-FlatPages-Knitr requires at least version 0.6 of Flat-Flatpages,
+which has not been released yet. Hence, you'll have to install it from Github:
+
+.. code:: bash
+
+    pip install git+git://github.com/SimonSapin/Flask-FlatPages/
+
 Second, install Flask-FlatPages-Knitr from the Python Package Index:
 
 .. code:: bash
@@ -37,7 +44,18 @@ Then you can simply add Flask-FlatPages-Knitr to your app:
 By default, ``FLATPAGES_HTML_RENDERER`` will be reused, which defaults
 to a Markdown implementation for Python. For more advanced Markdown
 rendering, `Flask-FlatPages-Pandoc <http://github.com/fhirschmann/Flask-FlatPages-Pandoc>`_
-is recommended.
+is recommended:
+
+.. code:: python
+
+    from flask_flatpages_pandoc import FlatPagesPandoc
+
+    FLATPAGES_EXTENSION = ".Rmd"
+
+    pages = FlatPages(app)
+    FlatPagesPandoc("markdown", "app", ["--mathjax"], pre_render=True)
+    FlatPagesKnitr(app)
+
 
 Links
 `````
