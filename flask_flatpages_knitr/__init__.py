@@ -5,7 +5,7 @@ flask_flatpages_knitr
 Flask-FlatPages-Knitr preprocesses a Flask FlatPage such that code chunks
 are evaluated before the next step in the rendering process occurs.
 
-:copyright: (c) 2014 Fabian Hirschmann <fabian@hirschm.net>
+:copyright: (c) 2014 Fabian Hirschmann <fabian@hirschmann.email>
 :license: MIT, see LICENSE.txt for more details.
 
 """
