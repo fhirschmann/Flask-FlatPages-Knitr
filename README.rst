@@ -1,9 +1,9 @@
 Flask-FlatPages-Knitr
 ---------------------
 
-Flask-FlatPages-Knitr preprocesses a `Flask <http://flask.pocoo.org/>`
-`FlatPage <http://pythonhosted.org/Flask-FlatPages/>`
-using `knitr <http://yihui.name/knitr/>` such that
+Flask-FlatPages-Knitr preprocesses a `Flask <http://flask.pocoo.org/>`_
+`FlatPage <http://pythonhosted.org/Flask-FlatPages/>`_
+using `knitr <http://yihui.name/knitr/>`_ such that
 code chunks are evaluated before the next step in the rendering
 process occurs.
 
