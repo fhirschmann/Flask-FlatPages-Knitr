@@ -1,6 +1,12 @@
 Flask-FlatPages-Knitr
 ---------------------
 
+.. image:: https://travis-ci.org/fhirschmann/Flask-FlatPages-Knitr.png?branch=master
+   :target: https://travis-ci.org/fhirschmann/Flask-FlatPages-Knitr
+
+.. image:: https://badge.fury.io/py/Flask-FlatPages-Knitr.png
+   :target: http://badge.fury.io/py/Flask-FlatPages-Knitr
+
 Flask-FlatPages-Knitr preprocesses a `Flask <http://flask.pocoo.org/>`_
 `FlatPage <http://pythonhosted.org/Flask-FlatPages/>`_
 using `knitr <http://yihui.name/knitr/>`_ such that
