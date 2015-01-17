@@ -9,7 +9,7 @@ Flask-FlatPages-Knitr
 
 Flask-FlatPages-Knitr preprocesses a `Flask <http://flask.pocoo.org/>`_
 `FlatPage <http://pythonhosted.org/Flask-FlatPages/>`_
-using `knitr <http://yihui.name/knitr/>`_ such that
+using `knitr <http://yihui.name/knitr/>`__ such that
 code chunks are evaluated before the next step in the rendering
 process occurs.
 
@@ -61,7 +61,7 @@ is recommended:
     FLATPAGES_EXTENSION = ".Rmd"
 
     pages = FlatPages(app)
-    FlatPagesPandoc("markdown", "app", ["--mathjax"], pre_render=True)
+    FlatPagesPandoc("markdown", app, ["--mathjax"], pre_render=True)
     FlatPagesKnitr(app)
 
 
