@@ -42,9 +42,9 @@ class TestFlatPagesKnitr(unittest.TestCase):
         self.assertTrue("3.14" in self.get("```{r}\npi\n```"))
 
     def test_plot(self):
-        self.get("```{r test}\nplot(1:4, 1:4)\n```")
+        self.get("```{r, test}\nplot(1:4, 1:4)\n```")
         self.assertTrue(os.path.exists(os.path.join(
-            self.tmp, "static", "knitr", "test", "figure", "test.png")))
+            self.tmp, "static", "knitr", "test", "figure", "test-1.png")))
 
     def test_unicode(self):
         self.assertTrue(u"萬大事都有得解決" in self.get(u"```{r}\npaste('萬大事都有得解決')\n```"))

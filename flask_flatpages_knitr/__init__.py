@@ -77,7 +77,7 @@ class FlatPagesKnitr(object):
         figure_url = "/".join([self.app.static_url_path, "knitr", page.path])
 
         if not path.exists(figure_path):
-            makedirs(figure_path)
+            makedirs(path.join(figure_path, "figure"))
 
         r("opts_knit$set(base.dir='{0}')".format(figure_path))
         r("opts_knit$set(base.url='{0}/')".format(figure_url))
