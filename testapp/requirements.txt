@@ -1,4 +1,4 @@
-Flask==0.10.1
+Flask==1.0
 -e git://github.com/SimonSapin/Flask-FlatPages.git#egg=Flask-FlatPages
 Jinja2==2.7.2
 Markdown==2.3.1
